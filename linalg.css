@@ -1,0 +1,862 @@
+@font-face {
+  font-family: "Monospace Typewriter";
+  src: url('MonospaceTypewriter.otf');
+  font-display: swap;
+}
+
+body, button, input, select {
+  font-family: "Monospace Typewriter", sans-serif;
+}
+
+body {
+  background-color: #f3f3f3;
+  transition: background-color 0.3s linear;
+  margin-right: 12.5px;
+  margin-bottom: 50px; /* for the footer */
+}
+
+.body-dark-mode {
+  background-color: #222222;
+  color: #d0d0d0;
+}
+
+.sn, .sidenote {
+  color: #666666;
+}
+
+.sidenote-dark-mode {
+  color: #959595;
+}
+
+.inverted {
+  filter: invert(1);
+}
+
+input[type=checkbox] {
+  transform: scale(2);
+}
+
+button {
+  transition: background-color 0.3s linear;
+  font-size: 0.9em;
+  color: black;
+  background-color: #eaeaea;
+  border-radius: 3px;
+  border: 1px solid black;
+  padding: 3px 10px 3px 10px;
+  touch-action: manipulation;
+}
+
+button:hover {
+  background-color: #e0e0e0;
+}
+
+.button-dark-mode {
+  background-color: #535353;
+  color: #f3f3f3;
+}
+
+.button-dark-mode:hover {
+  background-color: #101010;
+}
+
+.sidebar-button {
+  color: black;
+  background-color: #eaeaea;
+}
+
+.sidebar-button-dark-mode {
+  color: #f3f3f3;
+  background-color: #242424;
+}
+
+.sidebar-button-dark-mode:hover {
+  background-color: black;
+}
+
+/* colors */
+.green {
+  color: green;
+}
+
+.green-dark-mode { 
+  color: #4ee54e;
+}
+
+.red {
+  color: #d80000;
+}
+
+.red-dark-mode {
+  color: #ff6363;
+}
+
+.purple {
+  color: darkviolet;
+}
+
+.purple-dark-mode {
+  color: rgb(207, 96, 255);
+}
+
+.blue {
+  color: blue;
+}
+
+.blue-dark-mode {
+  color: #45b5ff;
+}
+
+.teal {
+  color: teal;
+}
+
+.teal-dark-mode {
+  color: #00cccc;
+}
+
+.black {
+  color: black;
+}
+
+.black-dark-mode {
+  color: #f3f3f3;
+}
+
+.gray {
+  color: #666666;
+}
+
+.gray-dark-mode {
+  color: #959595;
+}
+
+.bc-only-color {
+  color: teal;
+}
+
+.bc-only-color-dark-mode {
+  color: #00cccc;
+}
+
+.bonus-color {
+  color: green;
+}
+
+.bonus-color-dark-mode { 
+  color: #4ee54e;
+}
+
+.interactive-color {
+  color: purple;
+}
+
+.interactive-color-dark-mode {
+  color: rgb(207, 96, 255);
+}
+
+.lesson-complete {
+  color: green;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+.lesson-complete-dark-mode {
+  color: #4ee54e;
+}
+
+.lesson-incomplete {
+  color: #d80000;
+}
+
+.lesson-incomplete-dark-mode {
+  color: #ff6363;
+}
+
+.problem {
+  background-color: rgb(180, 236, 255);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.problem-dark-mode {
+  background-color: #00526d;
+}
+
+.warning {
+  color: #e80000;
+  font-weight: bold;
+}
+
+.warning-dark-mode {
+  color: #ff6363;
+}
+
+.heavy-hr {
+  height: 2px;
+  border: none;
+  background-color: rgb(156, 156, 156);
+}
+
+#sidebarLogo {
+  width: 190px;
+  position: relative;
+  right: 15px;
+}
+
+.sidebar {
+  transition: background-color 0.3s linear;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 160px;
+  background-color: #d5d5d5;
+  font-size: 1.3em;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.sidebar-dark-mode {
+  background-color: #464646;
+}
+
+/* hide sidebar scrollbar */
+#sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+#sidebar button {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border: 1.5px solid gray;
+  border-radius: 10px;
+  width: 150px;
+}
+
+.sidebar-unit {
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.sidebar-unit-text {
+  font-size: 0.9rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.footer {
+  transition: background-color 0.3s linear;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: #e0e0e0;
+  color: black;
+  text-align: center;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.footer-dark-mode {
+  background-color: #505050;
+  color: #f3f3f3;
+}
+
+#menuIcon {
+  border: 1.5px solid gray;
+  border-radius: 5px;
+  background-color: #f3f3f3;
+  position: fixed;
+  top: 20px;
+  z-index: 1;
+}
+
+.icon {
+  width: 25px;
+  position: relative;
+  top: 50%;
+  left: 0px;
+}
+
+.button-container {
+  position: relative;
+}
+
+.icon-container {
+  float: left;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.icon-text {
+  position: relative;
+  left: 30px;
+  padding-right: 30px;
+}
+
+/* These fractional pixels are strange but they're so that the button is the same size whether it's displaying the X or the hamburger icon */
+#hamburgerIcon {
+  margin-top: 8.5px;
+  margin-bottom: 8.5px;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+#hamburgerIcon div {
+  width: 29px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: black;
+  margin-top: 5.5px;
+  margin-bottom: 5.5px;
+}
+
+.x-icon {
+  margin-left: 19px;
+  margin-right: 19px;
+  margin-top: 2.5px;
+  margin-bottom: 2.5px;
+}
+
+.x-icon1, .x-icon2 {
+  height: 32px;
+  width: 3px;
+  border-radius: 3px;
+  background-color: black;
+}
+
+.x-icon1 {
+  transform: rotate(45deg);
+}
+
+.x-icon2 {
+  transform: rotate(90deg);
+}
+
+/* sidebar */
+@media (min-width: 801px) {
+  body {
+    margin-left: 172.5px;
+  }
+  #footer {
+    margin-left: 160px;
+    width: calc(100% - 150px);
+  }
+  #menuIcon {
+    display: none;
+  }
+  .sidebar-hidden {
+    display: block;
+  }
+}
+
+@media (max-width: 800px) {
+  body {
+    margin-left: 12.5px;
+  }
+  #footer {
+    width: 100%;
+  }
+  #menuIcon {
+    display: block;
+  }
+  .sidebar-hidden {
+    display: none;
+  }
+  .menu-icon-shifted {
+    left: 170px;
+  }
+  .menu-icon-normal {
+    left: 15px;
+  }
+}
+
+.popup {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.popup-content {
+  width: min(500px, 70vw);
+  background-color: #e0e0e0;
+  color: black;
+  border: 1px solid gray;
+  text-align: center;
+  border-radius: 5px;
+  padding: 25px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.popup-text {
+  max-height: 65vh;
+  overflow-y: auto;
+  margin-bottom: 15px;
+}
+
+.popup-content ul {
+  text-align: left;
+}
+
+#keyboardShortcutPopupContent, #searchPopupContent {
+  width: min(500px, 55vw);
+}
+
+.key {
+  font-family: monospace;
+  font-size: 1.2em;
+  background-color: #c0c0c0;
+  color: black;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 3px;
+  padding-right: 3px;
+  margin: 2px;
+  border: 1px solid dimgray;
+  border-radius: 3px;
+}
+
+.monospace {
+  font-family: monospace;
+  font-size: 1.2em;
+}
+
+/* keyboard shortcut button */
+@media (min-width: 601px) {
+  #keyboardShortcutButton, .keyboard-only {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  #keyboardShortcutButton, .keyboard-only {
+    display: none;
+  }
+}
+
+input[type=number] {
+  font-size: 1.25rem;
+  width: 150px;
+}
+
+#searchInput {
+  font-size: 1.1rem;
+  width: min(250px, 80%);
+}
+
+.small-text {
+  font-size: 0.95rem;
+}
+
+.medium-text {
+  font-size: 1.15rem;
+}
+
+.large-text {
+  font-size: 1.25rem;
+}
+
+.section-heading {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+em, .italic {
+  font-style: italic;
+}
+
+strong, .bold {
+  font-weight: bold;
+}
+
+.no-bullet {
+  list-style-type: none;
+}
+
+.small-input {
+  width: 100px;
+}
+
+.medium-input {
+  width: 150px;
+}
+
+button:active {
+  background-color: #f3f3f3;
+}
+
+button:disabled {
+  color: gray;
+  pointer-events: none;
+}
+
+.medium-button {
+  font-size: 1.05em;
+}
+
+.large-button {
+  font-size: 1.15em;
+}
+
+.huge-button {
+  font-size: 2em;
+}
+
+.short-slider {
+  width: 150px;
+  position: relative;
+  transform: scale(1.3);
+  transform-origin: 0 0;
+}
+
+.slider {
+  width: min(280px, calc(77vw - 50px));
+  position: relative;
+  transform: scale(1.3);
+  transform-origin: 0 0;
+}
+
+/* Add left margin to slider for mobile devices */
+@media (max-width: 450px) {
+  .slider {
+    margin-left: 20px;
+  }
+}
+
+/* Button spacing and mobile-only display */
+@media (min-width: 501px) {
+  .button-spacing, .mobile-only {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .button-spacing {
+    margin: 10px;
+  }
+  .mobile-only {
+    display: block;
+  }
+}
+
+/* h2 and h3 */
+@media (min-width: 601px) {
+  h2 {
+    font-size: 1.5em;
+  }
+
+  h3 {
+    font-size: 1.3em;
+  }
+}
+
+@media (min-width: 451px) and (max-width: 600px) {
+  h2 {
+    font-size: 1.4em;
+  }
+
+  h3 {
+    font-size: 1.25em;
+  }
+}
+
+@media (max-width: 450px) {
+  h2 {
+    font-size: 1.3em;
+  }
+
+  h3 {
+    font-size: 1.2em;
+  }
+}
+
+h4 {
+  font-size: 1.1em;
+}
+
+.khanLink {
+  font-size: 1.15em;
+  font-weight: bold;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+.table-dark-mode {
+  border: 1px solid #f3f3f3;
+}
+
+.table-div {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.overflow {
+  overflow-x: auto;
+}
+
+.min-width-column {
+  min-width: 40px;
+}
+
+a, .internal-link {
+  color: #4157ff;
+}
+
+.internal-link-dark-mode {
+  color: #9ed5ff;
+}
+
+a:active {
+  color: #ee0000;
+}
+
+.external-link {
+  color: #0000a0;
+}
+
+.external-link-dark-mode {
+  color: #8694ff;
+}
+
+.footer-link {
+  color: #374cf3;
+}
+
+.footer-link-dark-mode {
+  color: #9ed5ff;
+}
+
+#loading {
+  font-size: 0.9em;
+}
+
+.hidden, .hidden-by-default, .hidden-until-load {
+  display: none;
+}
+
+.result {
+  font-weight: bold;
+}
+
+.example {
+  font-size: max(min(6vw, 1.5em), 1em);
+}
+
+.small-example {
+  font-size: max(min(4.8vw, 1.5em), 0.9em);
+}
+
+.output-value {
+  font-weight: bold;
+}
+
+.large-graph {
+  width: min(90vw, 550px);
+}
+
+.graph {
+  width: min(90vw, 400px);
+}
+
+.small-graph {
+  width: min(90vw, 320px);
+}
+
+#logo {
+  width: min(90vw, 400px);
+}
+
+.canvas-graph {
+  width: min(90vw, 400px);
+  height: min(90vw, 400px);
+}
+
+.short-canvas-graph {
+  width: min(90vw, 400px);
+  height: min(22.5vw, 100px);
+}
+
+.mj, .mathjax {
+  overflow-x: auto;
+  overflow-y: hidden;
+  text-align: left;
+}
+
+.ntm, .no-top-margin {
+  margin-top: 0;
+}
+
+.nbm, .no-bottom-margin {
+  margin-bottom: 0;
+}
+
+.nm, .no-margin {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.top-margin {
+  margin-top: 10px;
+}
+
+.bottom-margin {
+  margin-bottom: 10px;
+}
+
+#title {
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  font-size: max(min(3.8vw, 1.17em), 1.05em);
+  font-weight: bold;
+}
+
+/* Logo */
+@media (max-width: 500px) {
+  #logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.link-ul, .link-ul ul {
+  line-height: 2;
+}
+
+.float-tables {
+  overflow: hidden;
+}
+
+.float-tables table {
+  float: left;
+}
+
+.left-margin {
+  margin-left: 10px;
+}
+
+.float-table-text {
+  clear: left;
+  margin-top: 10px;
+}
+
+/* Footer font size */
+@media (min-width: 501px) {
+  #footer {
+    font-size: 1.15em;
+  }
+}
+
+@media (min-width: 401px) and (max-width: 500px) {
+  #footer {
+    font-size: 1.05em;
+  }
+}
+
+@media (min-width: 351px) and (max-width: 400px) {
+  #footer {
+    font-size: 0.95em;
+  }
+}
+
+@media (max-width: 350px) {
+  #footer {
+    font-size: 0.9em;
+  }
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+ul, ol {
+  padding-inline-start: 35px;
+  line-height: 1.5;
+}
+
+ul ul {
+  padding-inline-start: 25px;
+}
+
+/* ul and ol */
+@media (max-width: 450px) {
+  ul {
+    padding-inline-start: 25px;
+  }
+  ol {
+    padding-inline-start: 30px;
+  }
+  ul ul {
+    padding-inline-start: 15px;
+  }
+}
+
+/* Fix weird mathjax bug causing horizontal scroll */
+mjx-assistive-mml {
+  right: 0px;
+}
+
+pre {
+  margin: 0px;
+}
+
+code {
+  font-family: monospace;
+  background-color: #eee;
+  border: 1px solid #999;
+  padding: 1px 3px;
+  font-size: 1.1em;
+}
+
+.long-code {
+  display: block;
+  padding-left: 20px;
+  padding-right: 20px;
+  overflow-x: auto;
+}
+
+select {
+  font-size: 1em;
+}
+
+#backgroundImage {
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#content {
+  position: relative;
+  z-index: 1;
+}
